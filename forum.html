@@ -2,7 +2,7 @@
 
 <html lang="fr">
   <head>
-      <title>Formulaire</title>
+      <title>Forum</title>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -79,48 +79,90 @@
     #menu li ul {
     position:absolute;
     } 
-    #formulaire h1{
+    img{
+      width: 250px;
+      height: 250px;
+      margin-left: 20px;
+    }
+    #forum h1{
       color:white;
       margin-left: 15px;
       font-size: 60px;
       margin-top: 60px;
       text-align: center
     }
-    img{
-      width: 250px;
-      height: 250px;
-      margin-left: 20px;
+      p{
+      color: white;
+      font-family: arial;
+      font-size: 30px;
+      text-align: center;
     }
-
-    #formulaire label{ 
-      margin-left: 500px;
-      margin-top: auto;
-      color: black;
-     }
-     #formulaire p{ 
-     color: #FFFFFF; 
-     font-family: arial;
-     font-size: 20px;
-     margin-left: 20px;
-     margin-right: 150px;
-     border-style: outset;
-     border-color: white;
-     text-align: center;
-    }
-    #select-secteur{
-      margin-left: 500px;
-    }
-
-    .valider{
-      margin-left: 400px;
+    #discussion{
+      color: #006A4E;
+      margin-left: 900px;
+      margin-right: 100px;
+      border-radius: 10px;
+      margin-top: 40px;
       font-size: 30px;
     }
+  
+  fieldset {
+  border: 5px solid transparent; 
+  border-top-color: black; 
+  box-sizing: border-box; 
+  padding: 100px; 
+  width: inherit; 
+  margin-right: 750px;
+  margin-left: 100px;
+  text-align: center;
+}
+legend {
+    background-color: white;
+    color: #006A4E;
+    padding: 3px 6px;
+}
+#sujet{
+  margin-top: -100px;
+}
+#sujet1{
+  margin-left: -690px;
+  margin-top: -200px;
+}
+
+table {
+  font-family: arial;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 0px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-family: arial;
+  color: white;
+  font-size: 20px;
+}
+th {
+  border: 5px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color:white;
+  font-size: 25px;
+  font-family: arial;
+}
+
+tr:nth-child(even) {
+  background-color: #006A4E;
+}
+
+
   </style>
   
 
 
 <body> 
-  <h1 id="titre"> Titre de la plateforme</h1>
+  <h1 id="titre">Titre de la plateforme</h1>
     <br>
     <a href="index.html"><img src="logo.png" class="image"/> </a>
     <br>
@@ -129,11 +171,11 @@
 
 <div id="menu">
 <ul>
-  <li><a href="#">Mon bilan</a></li>
+  <li><a href="formulaire.html">Mon bilan</a></li>
   <li><a href="#">Communauté</a>
     <ul>
       <li><a href="catalogue.html">Catalogue</a></li>
-      <li><a href="#">Forum</a></li>
+      <li><a href="forum.html">Forum</a></li>
     </ul>
   </li>
   <li><a href="#">Accompagnement</a>
@@ -148,33 +190,57 @@
 <br>
 </div>
 
-<div id="formulaire">
-  <h1> Mon bilan personnalisé</h1>
-<form action="" method="get" class="form-example">
-  <div class="f">
-    <br>
-    <label for="info1">Info 1 : </label>
-    <input type="text" name="info1" id="info1" value="Rentrez votre info 1" required>
-    <br>
-    <br>
-     <label for="info2">Info 2 : </label>
-    <input type="info2" name="info2" id="info2" value="Rentrez votre info 2" required>
-    <br>
-    <br>
-      <select name="secteur" id="select-secteur">
-          <option>--Veuillez choisir votre secteur d'activité--</option>
-          <option> Agriculture</option>
-          <option>Commerçant</option>
-
-      </select>
- </div>
-  
- <div class="valider">
-    <br>
-    <input type="submit" value="J'accède à mon bilan personnalisé">
+<div id="forum">
+  <h1> Forum</h1>
 </div>
-</form>
+<div id="paragraphe">
+  <p> Accédez aux discussions qui vous intéressent, demandez de l'aide, partagez vos conseils et échangez avec les autres professionels autour de vous. <p>
 </div>
 
+<div id="discussion"> 
+<button>Créer une discussion</button>
+</div>
+
+<div id="sujet"> 
+  <br>
+  <fieldset>
+    <legend>Discussion à la une</legend>
+  </fieldset>
+</div>
+<div id="sujet1">
+  <a href="#"><p> Sujet </p></a>
+</div>
+<div id="tableau">
+  <table>
+  <tr>
+    <th>Sujet</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+    <td>Sujet 1</td>
+    <td>Date 1</td>
+  </tr>
+  <tr>
+    <td>Sujet 2</td>
+    <td>Date 2</td>
+  </tr>
+  <tr>
+    <td>Sujet 3</td>
+    <td>Date 3</td>
+  </tr>
+  <tr>
+    <td>Sujet 4</td>
+    <td>Date 4</td>
+  </tr>
+  <tr>
+    <td>Sujet 5</td>
+    <td>Date 5</td>
+  </tr>
+  <tr>
+    <td>Sujet 6</td>
+    <td>Date 6</td>
+  </tr>
+</table>
+</div>
 </body>
 </html>

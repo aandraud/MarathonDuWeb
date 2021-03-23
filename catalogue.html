@@ -2,7 +2,7 @@
 
 <html lang="fr">
   <head>
-      <title>Formulaire</title>
+      <title>Catalogue</title>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -79,48 +79,57 @@
     #menu li ul {
     position:absolute;
     } 
-    #formulaire h1{
+    img{
+      width: 250px;
+      height: 250px;
+      margin-left: 20px;
+    }
+    #pro h1{
       color:white;
       margin-left: 15px;
       font-size: 60px;
       margin-top: 60px;
       text-align: center
     }
-    img{
-      width: 250px;
-      height: 250px;
-      margin-left: 20px;
-    }
 
-    #formulaire label{ 
-      margin-left: 500px;
-      margin-top: auto;
-      color: black;
-     }
-     #formulaire p{ 
-     color: #FFFFFF; 
-     font-family: arial;
-     font-size: 20px;
-     margin-left: 20px;
-     margin-right: 150px;
-     border-style: outset;
-     border-color: white;
-     text-align: center;
-    }
-    #select-secteur{
-      margin-left: 500px;
-    }
-
-    .valider{
-      margin-left: 400px;
+    #fiche{
+      color: #006A4E;
+      margin-left: 900px;
+      margin-right: 100px;
+      border-radius: 10px;
+      margin-top: 40px;
       font-size: 30px;
     }
+    #contact1{
+      margin-top: 20px;
+    }
+    p{
+      color: white;
+      font-family: arial;
+      font-size: 30px;
+    }
+    #contact2{
+      margin-left: 300px;
+      margin-top: -200px;
+    }
+
+    #contact3{
+        color: #006A4E;
+      margin-left: 900px;
+      margin-right: 0px;
+      border-radius: 10px;
+      margin-top: -100px;
+      font-size: 30px;
+
+    }
+
+
   </style>
   
 
 
 <body> 
-  <h1 id="titre"> Titre de la plateforme</h1>
+  <h1 id="titre">Titre de la plateforme</h1>
     <br>
     <a href="index.html"><img src="logo.png" class="image"/> </a>
     <br>
@@ -129,11 +138,11 @@
 
 <div id="menu">
 <ul>
-  <li><a href="#">Mon bilan</a></li>
+  <li><a href="formulaire.html">Mon bilan</a></li>
   <li><a href="#">Communauté</a>
     <ul>
       <li><a href="catalogue.html">Catalogue</a></li>
-      <li><a href="#">Forum</a></li>
+      <li><a href="forum.html">Forum</a></li>
     </ul>
   </li>
   <li><a href="#">Accompagnement</a>
@@ -148,32 +157,44 @@
 <br>
 </div>
 
-<div id="formulaire">
-  <h1> Mon bilan personnalisé</h1>
-<form action="" method="get" class="form-example">
-  <div class="f">
-    <br>
-    <label for="info1">Info 1 : </label>
-    <input type="text" name="info1" id="info1" value="Rentrez votre info 1" required>
-    <br>
-    <br>
-     <label for="info2">Info 2 : </label>
-    <input type="info2" name="info2" id="info2" value="Rentrez votre info 2" required>
-    <br>
-    <br>
-      <select name="secteur" id="select-secteur">
-          <option>--Veuillez choisir votre secteur d'activité--</option>
-          <option> Agriculture</option>
-          <option>Commerçant</option>
-
-      </select>
- </div>
-  
- <div class="valider">
-    <br>
-    <input type="submit" value="J'accède à mon bilan personnalisé">
+<div id="pro">
+  <h1> Les professionnels à proximité</h1>
 </div>
-</form>
+
+<div id="fiche"> 
+<button>J'ajoute ma fiche entreprise</button>
+</div>
+<br>
+<hr>
+<div id="contact1">
+  <img src="logo.png">
+</div>
+<br>
+<div id="contact2">
+  <p>Nom <br>Adresse<br>Début de description</p>
+</div>
+<div id="contact3">
+  <button>Contact</button>
+  <button>Site Web</button>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<div id="contact1">
+  <img src="logo.png">
+</div>
+<br>
+<div id="contact2">
+  <p>Nom <br>Adresse<br>Début de description</p>
+</div>
+<div id="contact3">
+  <button>Contact</button>
+  <button>Site Web</button>
 </div>
 
 </body>
