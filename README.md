@@ -28,16 +28,8 @@ D'un point de vue visualisation, l'objectif est d'élaborer une plateforme web �
 
 # Questions : 
 
-Plateforme ->  de faire de l’acquisition digitale??
-définir des pistes d'accompagnement bancaire adapté à chaque situation??
-Site dédié uniquement aux clients?
-Pourquoi NB_J_DUR_EXRCC >365 (va de 30 à 930)
-Quelles colonnes nécessaire?
-Présentation du site web? Dans la vidéo ? faire un lien?
-Chiffre d'affaire -> Est_ce que c'est le début ou la fin des données?
-Pour le chiffre d'affaire de 2019, on l'a déjà? Il faut faire des catégories? Chiffre d'affaire pour toute l'année de toutes les entreprises?
-Chiffre d'affaire 2020, est-ce que c'est décalé? Du 1Er janvier 2019 au 31 décembre 2019
 
 
-Lien Trello : https://trello.com/b/BzjhWhf6/sprint-1
+# Lien Trello : 
+https://trello.com/b/BzjhWhf6/sprint-1
 
