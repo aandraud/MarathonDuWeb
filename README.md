@@ -1,4 +1,4 @@
-# MarathonDuWeb
+# MarathonDuWeb GROUPE 3
 
 # Projet : 
 Accompagner la clientèle pro du Crédit Agricole en sortie de confinement
@@ -12,8 +12,12 @@ Le crédit agricole a été très impacté par la crise de la Covid-19 malgré l
 De nombreux profils sont présents dans la clientèle du Crédit Agricole avec plus d'un million de client. L'enjeu est d'avoir une très bonne connaissance de leurs clients. Cette connaissance passe par les données, notamment le chiffre d'affaire qui est directement lié au résultat net et à la santé de l'entreprise. 
 
 # Objectifs : 
-D'un point de vue data science, l'objectif est de prédire la reprise d’activité de la clientèle professionnelle dans un contexte de sortie de confinement en mars 2021 afin de mettre en place un accompagnement bancaire personnalisé et adapté.
-D'un point de vue visualisation, l'objectif est d'élaborer une plateforme web avec des degrés de difficultés des entreprises, faire un zoom par secteur. 
+D'un point de vue data science : prédire la reprise d'activité de la clientèle professionnelle dans un contexte de sortie de confinement en mars 2021 afin de mettre en place un accompagnement bancaire personnalisé et adapté. Cela passe par des traitements de Data Science et des visualistations associées pour :
+- Estimer le chiffre d'affaires 2020
+- Prédire le chiffre d'affaires 2021
+- Catégoriser les différentes situations et définir des pistes d'accompagnement bancaire adapté à chaque situation. 
+
+D'un point de vue visualisation, l'objectif est d'élaborer une plateforme web à destination des professionnels dont l'intéret est de mettre à disposition une vision de notre positionnement sur le marché et de faire de l'acquisition digitale, mais d'également d'exposer nos résultats de traitement de données avec de la visualisation : degrés de difficultés des entreprises, faire un zoom par secteur d'activité etc... 
 
 # Questions : 
 
