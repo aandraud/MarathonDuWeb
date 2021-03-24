@@ -11,7 +11,7 @@
   </head>
   	<style type="text/css">
     	body{
-			background-color: #009597;
+			background-color: #F5F5F5;
 			}
 		.image{
 			width: 200px;
@@ -20,17 +20,24 @@
   			margin-left: 10px;
   			margin-right: auto;
   			margin-top: -100px;
-  			border-radius: 55px;
+		}
+		@font-face {
+    	font-family: "gotham xnarrow black";
+    	src: url("gotham_Xnarrow_Black.otf") format("truetype");
 		}
 		#titre{ 
-			color:#FFFFFF;
-			font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+			color:#006A4E;
+			font-family: gotham xnarrow black;
 			text-align: center;
 			font-size: 60px;
 			border-width:2px;
  			margin-right: 300px;
  			margin-left: 300px;
 		 }
+		 @font-face {
+    	font-family: "gotham medium";
+    	src: url("Gotham_Medium.otf") format("truetype");
+		}
 		 #menu{
 		 	margin-right: 300px;
  			margin-left: 300px;
@@ -38,32 +45,34 @@
 		 }
 
 		#menu ul {
- 		margin:0;
+ 		margin-left: 50px;
  		padding:0;
  		list-style-type:none;
  		text-align:center;
  		}
 		#menu li {
  		float:left;
- 		margin-right: 20px;
- 		background-color: white;
- 		width: 138px;
- 		text-align: center;
+ 		margin-right: 10px;
+ 		margin-left: -45px;
+ 		background-color: #006A4E;
+ 		width: 188px;
+ 		height: 30px;
+ 		text-align: right;
  		font-family: gotham medium;
- 		border-radius: 5px;
- 		font-size: 15px;
+ 		border-radius: 2px;
+ 		font-size: 11.5px;
  		}
 
 		#menu li a {
 		display:block;
  		width:100px;
- 		color:black;
+ 		color:#FBFAFA;
  		text-decoration:none;
  		padding:5px;
  		margin-left: 15px;
  		}
 		#menu li a:hover {
- 		color:#FFD700;
+ 		color:black;
  		}
 
 		#menu ul li ul {
@@ -98,9 +107,9 @@
 		}
 
 		#texte h1{ 
-			color:#FFFFFF;
-			font-family: arial
-			font-size: 300px;
+			color:black;
+			font-family: arial bold;
+			font-size: 60px;
 			border-width:2px;
 		 	margin-right: 900px;
 		 	margin-left: 0px;
@@ -108,10 +117,10 @@
 
 		}
 		#paragraphe{
-			color:#FFFFFF;
+			color:black;
 			font-size: 35px;
 			margin-left: 50px;
-			font-family: gotham medium;
+			font-family: arial regular;
 		}
 		input{
 			border-radius: 5px;
@@ -132,9 +141,10 @@
 		 	color: white;
 		 	margin-left: 400px;
 		 	border-radius: 10px;
-		 	background-color: #ED1B2F;
+		 	background-color: #006A4E;
 		 	font-size: 30px;
 		 }
+		
 
 	</style>
 	
@@ -148,21 +158,21 @@
 
 <div id="menu">
 <ul>
-  <li><a href="formulaire.html">Mon bilan</a></li>
-  <li><a href="#">Communauté</a>
+  <li><a href="formulaire.html">MON BILAN</a></li>
+  <li><a href="#">COMMUNAUTÉ</a>
     <ul>
-      <li><a href="catalogue.html">Catalogue</a></li>
-      <li><a href="forum.html">Forum</a></li>
+      <li><a href="catalogue.html">CATALOGUE</a></li>
+      <li><a href="forum.html">FORUM</a></li>
     </ul>
   </li>
-  <li><a href="#">Accompagnement</a>
+  <li><a href="#">ACCOMPAGNEMENT</a>
   	<ul>
-      <li><a href="actupro.html">L'actu pro</a></li>
-      <li><a href="webinaires.html">Webinaires</a></li>
-      <li><a href="#">Solutions Web</a></li>
+  	  <li><a href="#">SOLUTIONS WEB</a></li>
+      <li><a href="actupro.html">L'ACTU PRO</a></li>
+      <li><a href="webinaires.html">WEBINAIRES</a></li>
     </ul>
 </li>
-  <li><a href="#">A propos</a>
+  <li><a href="#">A PROPOS</a>
 </ul>
 </div>
 
@@ -180,15 +190,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="image1.png" alt="Los Angeles" style="width:100%;">
+        <img src="image1.png" alt="image1" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="image2.png" alt="Chicago" style="width:100%;">
+        <img src="image2.png" alt="image2" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="logo.png" alt="New york" style="width:100%;">
+        <img src="image1.png" alt="image3" style="width:100%;">
       </div>
     </div>
 

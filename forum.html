@@ -10,8 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
     <style type="text/css">
-      body{
-      background-color: #009597;
+     body{
+      background-color: #F5F5F5;
       }
     .image{
       width: 200px;
@@ -20,17 +20,24 @@
         margin-left: 10px;
         margin-right: auto;
         margin-top: -100px;
-        border-radius: 55px;
+    }
+      @font-face {
+      font-family: "gotham xnarrow black";
+      src: url("gotham_Xnarrow_Black.otf") format("truetype");
     }
     #titre{ 
-      color:#FFFFFF;
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      color:#006A4E;
+      font-family: gotham xnarrow black;
       text-align: center;
       font-size: 60px;
       border-width:2px;
       margin-right: 300px;
       margin-left: 300px;
      }
+     @font-face {
+      font-family: "gotham medium";
+      src: url("Gotham_Medium.otf") format("truetype");
+    }
      #menu{
       margin-right: 300px;
       margin-left: 300px;
@@ -38,33 +45,34 @@
      }
 
     #menu ul {
-    margin:0;
+    margin-left: 50px;
     padding:0;
     list-style-type:none;
     text-align:center;
     }
     #menu li {
     float:left;
-    margin-right: 20px;
-    background-color: white;
-    width: 138px;
-    text-align: center;
+    margin-right: 10px;
+    margin-left: -45px;
+    background-color: #006A4E;
+    width: 188px;
+    height: 30px;
+    text-align: right;
     font-family: gotham medium;
-    border-radius: 5px;
-    font-size: 15px;
+    border-radius: 2px;
+    font-size: 11.5px;
     }
 
     #menu li a {
     display:block;
     width:100px;
-    color:black;
+    color:#FBFAFA;
     text-decoration:none;
     padding:5px;
     margin-left: 15px;
     }
     #menu li a:hover {
     color:black;
-    background-color:white;
     }
 
     #menu ul li ul {
@@ -78,18 +86,11 @@
     }
     #menu li ul {
     position:absolute;
-    } 
+    }
     img{
       width: 250px;
       height: 250px;
       margin-left: 20px;
-    }
-    #forum h1{
-      color:white;
-      margin-left: 15px;
-      font-size: 60px;
-      margin-top: 60px;
-      text-align: center
     }
       p{
       color: white;
@@ -117,8 +118,9 @@
   text-align: center;
 }
 legend {
-    background-color: white;
-    color: #006A4E;
+    color: white;
+      background-color: #006A4E;
+      font-family: arial;
     padding: 3px 6px;
 }
 #sujet{
@@ -128,9 +130,13 @@ legend {
   margin-left: -690px;
   margin-top: -200px;
 }
+#sujet1 p{
+  color: black;
+  font-family: arial medium;
+}
 
 table {
-  font-family: arial;
+  font-family: arial medium;
   border-collapse: collapse;
   width: 100%;
 }
@@ -139,23 +145,40 @@ td {
   border: 0px solid #dddddd;
   text-align: left;
   padding: 8px;
-  font-family: arial;
-  color: white;
+  font-family: arial medium;
+  color: black;
   font-size: 20px;
 }
 th {
   border: 5px solid #dddddd;
   text-align: left;
   padding: 8px;
-  color:white;
+  color:black;
   font-size: 25px;
-  font-family: arial;
+  font-family: arial medium;
 }
 
 tr:nth-child(even) {
   background-color: #006A4E;
 }
 
+  #forum h1{ 
+      color: black;
+      font-family: arial bold;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      font-size: 60px;
+    }
+  #paragraphe p{
+    color: black;
+    font-family: arial medium;
+  }
+  button{
+      color: white;
+      background-color: #006A4E;
+      font-family: arial;
+     }
 
   </style>
   
@@ -171,21 +194,21 @@ tr:nth-child(even) {
 
 <div id="menu">
 <ul>
-  <li><a href="formulaire.html">Mon bilan</a></li>
-  <li><a href="#">Communauté</a>
+  <li><a href="formulaire.html">MON BILAN</a></li>
+  <li><a href="#">COMMUNAUTÉ</a>
     <ul>
-      <li><a href="catalogue.html">Catalogue</a></li>
-      <li><a href="forum.html">Forum</a></li>
+      <li><a href="catalogue.html">CATALOGUE</a></li>
+      <li><a href="forum.html">FORUM</a></li>
     </ul>
   </li>
-  <li><a href="#">Accompagnement</a>
+  <li><a href="#">ACCOMPAGNEMENT</a>
     <ul>
-      <li><a href="actupro.html">L'actu pro</a></li>
-      <li><a href="webinaires.html">Webinaires</a></li>
-      <li><a href="#">Solutions Web</a></li>
+      <li><a href="#">SOLUTIONS WEB</a></li>
+      <li><a href="actupro.html">L'ACTU PRO</a></li>
+      <li><a href="webinaires.html">WEBINAIRES</a></li>
     </ul>
 </li>
-  <li><a href="#">A propos</a>
+  <li><a href="#">A PROPOS</a>
 </ul>
 <br>
 </div>

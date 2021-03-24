@@ -11,7 +11,7 @@
   </head>
     <style type="text/css">
       body{
-      background-color: #009597;
+      background-color: #F5F5F5;
       }
     .image{
       width: 200px;
@@ -20,17 +20,24 @@
         margin-left: 10px;
         margin-right: auto;
         margin-top: -100px;
-        border-radius: 55px;
+    }
+      @font-face {
+      font-family: "gotham xnarrow black";
+      src: url("gotham_Xnarrow_Black.otf") format("truetype");
     }
     #titre{ 
-      color:#FFFFFF;
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      color:#006A4E;
+      font-family: gotham xnarrow black;
       text-align: center;
       font-size: 60px;
       border-width:2px;
       margin-right: 300px;
       margin-left: 300px;
      }
+     @font-face {
+      font-family: "gotham medium";
+      src: url("Gotham_Medium.otf") format("truetype");
+    }
      #menu{
       margin-right: 300px;
       margin-left: 300px;
@@ -38,32 +45,34 @@
      }
 
     #menu ul {
-    margin:0;
+    margin-left: 50px;
     padding:0;
     list-style-type:none;
     text-align:center;
     }
     #menu li {
     float:left;
-    margin-right: 20px;
-    background-color: white;
-    width: 138px;
-    text-align: center;
+    margin-right: 10px;
+    margin-left: -45px;
+    background-color: #006A4E;
+    width: 188px;
+    height: 30px;
+    text-align: right;
     font-family: gotham medium;
-    border-radius: 5px;
-    font-size: 15px;
+    border-radius: 2px;
+    font-size: 11.5px;
     }
 
     #menu li a {
     display:block;
     width:100px;
-    color:black;
+    color:#FBFAFA;
     text-decoration:none;
     padding:5px;
     margin-left: 15px;
     }
     #menu li a:hover {
-    color:#FFD700;
+    color:black;
     }
 
     #menu ul li ul {
@@ -77,12 +86,15 @@
     }
     #menu li ul {
     position:absolute;
-    } 
+    }
+
     #actupro h1{
-      color:white;
+      color:black;
+      font-family: arial medium;
       margin-left: 15px;
       font-size: 60px;
       margin-top: 60px;
+      text-align: center;
     }
     img{
       width: 250px;
@@ -91,7 +103,7 @@
     }
 
     .article figcaption{
-      color:white;
+      color:black;
       font-family: arial;
       margin-left: 30px;
       font-size: 30px; 
@@ -103,7 +115,7 @@
     }
 
     .article1 figcaption{
-      color:white;
+      color:black;
       font-family: arial;
       margin-left: 30px;
       font-size: 30px;
@@ -115,7 +127,7 @@
     }
 
     .article2 figcaption{
-      color:white;
+      color:black;
       font-family: arial;
       margin-left: 30px;
       font-size: 30px;
@@ -128,7 +140,7 @@
 
     .article3 figcaption{
 
-    color:white;
+    color:black;
     font-family: arial;
     margin-left: 30px;
     font-size: 30px;
@@ -141,7 +153,7 @@
 
     .article4 figcaption{
 
-    color:white;
+    color:black;
     font-family: arial;
     margin-left: 30px;
     font-size: 30px;
@@ -163,21 +175,21 @@
 
 <div id="menu">
 <ul>
-  <li><a href="formulaire.html">Mon bilan</a></li>
-  <li><a href="#">Communauté</a>
+  <li><a href="formulaire.html">MON BILAN</a></li>
+  <li><a href="#">COMMUNAUTÉ</a>
     <ul>
-      <li><a href="catalogue.html">Catalogue</a></li>
-      <li><a href="forum.html">Forum</a></li>
+      <li><a href="catalogue.html">CATALOGUE</a></li>
+      <li><a href="forum.html">FORUM</a></li>
     </ul>
   </li>
-  <li><a href="#">Accompagnement</a>
+  <li><a href="#">ACCOMPAGNEMENT</a>
     <ul>
-      <li><a href="actupro.html">L'actu pro</a></li>
-      <li><a href="webinaires.html">Webinaires</a></li>
-      <li><a href="#">Solutions Web</a></li>
+      <li><a href="#">SOLUTIONS WEB</a></li>
+      <li><a href="actupro.html">L'ACTU PRO</a></li>
+      <li><a href="webinaires.html">WEBINAIRES</a></li>
     </ul>
 </li>
-  <li><a href="#">A propos</a>
+  <li><a href="#">A PROPOS</a>
 </ul>
 <br>
 </div>
@@ -190,63 +202,63 @@
 
 <div class="article">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro1.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro2.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro3.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article1">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro4.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article2">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro5.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article2">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro6.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article3">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro3.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article4">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro1.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
 
 <div class="article4">
   <figure>
-  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="logo.png" alt="article" class="article" /></a>
+  <a href="https://www.credit-agricole.fr/" target="_blank" id="article" ><img src="actupro2.jpg" alt="article" class="article" /></a>
   <figcaption>TITRE</figcaption>
   </figure>
 </div>
