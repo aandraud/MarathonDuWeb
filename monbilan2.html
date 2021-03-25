@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+      <title>Mon bilan</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+    <style type="text/css">
+      body{
+      background-color: #F5F5F5;
+      }
+    .image{
+      width: 200px;
+      height: 150px;
+      display: block;
+        margin-left: 10px;
+        margin-right: auto;
+        margin-top: -100px;
+    }
+      @font-face {
+      font-family: "gotham xnarrow black";
+      src: url("gotham_Xnarrow_Black.otf") format("truetype");
+    }
+    #titre{ 
+      color:#006A4E;
+      font-family: gotham xnarrow black;
+      text-align: center;
+      font-size: 60px;
+      border-width:2px;
+      margin-right: 300px;
+      margin-left: 300px;
+     }
+     @font-face {
+      font-family: "gotham medium";
+      src: url("Gotham_Medium.otf") format("truetype");
+    }
+     #menu{
+      margin-right: 300px;
+      margin-left: 300px;
+      margin-top: -30px;     
+     }
+
+    #menu ul {
+    margin-left: 50px;
+    padding:0;
+    list-style-type:none;
+    text-align:center;
+    }
+    #menu li {
+    float:left;
+    margin-right: 10px;
+    margin-left: -45px;
+    background-color: #006A4E;
+    width: 188px;
+    height: 30px;
+    text-align: right;
+    font-family: gotham medium;
+    border-radius: 2px;
+    font-size: 11.5px;
+    }
+
+    #menu li a {
+    display:block;
+    width:100px;
+    color:#FBFAFA;
+    text-decoration:none;
+    padding:5px;
+    margin-left: 15px;
+    }
+    #menu li a:hover {
+    color:black;
+    }
+
+    #menu ul li ul {
+    display:none;
+    }
+    #menu ul li:hover ul {
+    display:block;
+    }
+    #menu li:hover ul li {
+    float:none;
+    }
+    #menu li ul {
+    position:absolute;
+    }
+    img{
+      width: 250px;
+      height: 250px;
+      margin-left: 20px;
+    }
+#monbilan h1{ 
+      color:black;
+      font-family: arial bold;
+      text-align: center;
+      font-size: 60px;
+      margin-top: 40px;
+
+    }
+  #chartContainer{
+    background-color:#F5F5F5
+  }
+#monid{
+  color: white;
+  font-family: arial medium;
+  font-size: 30px;
+  background-color: #006A4E;
+}
+#resultats{
+  color: black;
+  font-family: arial medium;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  }
+
+  table {
+  font-family: arial medium;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 5px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-family: arial medium;
+  color: black;
+  font-size: 20px;
+}
+th {
+  border: 5px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color:white;
+  font-size: 25px;
+  font-family: arial medium;
+    background-color: #006A4E;
+
+}
+
+tr:nth-child(even) {
+  background-color: none;
+}
+
+#tableau h1{
+  text-align: center;
+  color: black;
+  font-family: arial bold;
+  font-size: 50px;
+  text-decoration: underline;
+}
+  </style>
+
+
+
+
+  <script>
+
+
+var dataPoints = [];
+var dataPoints1= [];
+var dataPoints2=[];
+var dataPoints3=[];
+console.log(dataPoints);
+
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  exportEnabled: true,
+  title: {
+    text: "Flux créditeurs confiés avec Covid"
+  },
+  axisY: {
+    title: "Montant en euros"
+  },
+  axisX:{
+    title:" Date"
+  },
+  data: [{
+    type: "line",
+    toolTipContent: "{y} euros",
+    color:"red",
+    dataPoints: dataPoints,
+  },
+  {
+    type: "line",
+    toolTipContent: "{y} euros",
+    dataPoints: dataPoints1,
+    color: "black",
+  },{
+    type: "line",
+    toolTipContent: "{y} euros",
+    dataPoints: dataPoints2,
+    color:"black",
+    lineDashType: "dash"
+  },
+  {
+    type: "line",
+    toolTipContent: "{y} euros",
+    dataPoints: dataPoints3,
+    color: "red",
+    lineDashType: "dash"
+  }
+  ]
+});
+chart.render();
+
+function toogleDataSeries(e){
+    if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+        e.dataSeries.visible = false;
+    } else{
+        e.dataSeries.visible = true;
+    }
+    chart.render();
+}
+    var chart = new CanvasJS.Chart("chartContainer1", {
+
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+            text: "Flux créditeurs confiés sans covid"
+        },
+        axisY: {
+            title: "Montant euros"
+        },
+        axisX:{
+            title:" Date"
+        },
+        data: [{
+            type: "line",
+            toolTipContent: "{y} euros",
+            dataPoints: dataPoints5,
+            color:"red",
+        },
+        {
+          type: "line",
+          toolTipContent: "{y} euros",
+          dataPoints: dataPoints6,
+          color: "black",
+            },
+            {
+          type: "line",
+          toolTipContent: "{y} euros",
+          dataPoints: dataPoints7,
+          color: "black",
+          lineDashType: "dash",
+            },
+             {
+          type: "line",
+          toolTipContent: "{y} euros",
+          dataPoints: dataPoints8,
+          color: "red",
+          lineDashType: "dash",
+            }
+            ]
+    });
+
+    chart.render();
+    var chart = new CanvasJS.Chart("chartContainer2", {
+
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+            text: "Comparaison de vos flux en période de COVID et non COVID"
+        },
+        axisY: {
+            title: "Montant euros"
+        },
+        axisX:{
+            title:" Date"
+        },
+        data: [{
+            type: "line",
+            toolTipContent: "{y} euros",
+            dataPoints: dataPoints9,
+            color:"red",
+        },
+        {
+          type: "line",
+          toolTipContent: "{y} euros",
+          dataPoints: dataPoints10,
+          color: "black",
+            },
+            {
+          type: "line",
+          toolTipContent: "{y} euros",
+          dataPoints: dataPoints11,
+          color: "black",
+          lineDashType: "dash",
+            },
+             {
+          type: "line",
+          toolTipContent: "{y} euros",
+          dataPoints: dataPoints12,
+          color: "red",
+          lineDashType: "dash",
+            }
+            ]
+    });
+
+    chart.render();
+
+
+
+
+
+};
+
+
+
+$.get("hotel_plot.csv", getDataPointsFromCSV);
+ 
+//CSV Format
+//Year,Volume
+
+
+
+
+
+ 
+var dataPoints5 = [];
+var dataPoints6= [];
+var dataPoints7=[];
+var dataPoints8=[];
+
+
+
+$.get("hotel_plot1.csv", getDataPointsFromCSV1);
+ 
+//CSV Format
+//Year,Volume
+function getDataPointsFromCSV(csv) {
+  var points;
+  var csvLines = csv.split(/[\r?\n|\r|\n]+/);
+  for (var i = 0; i < csvLines.length; i++) {
+    if (csvLines[i].length > 0) {
+      points = csvLines[i].split(";");
+      dataPoints.push({
+        label: points[0],
+        y: parseFloat(points[1])
+      });
+      dataPoints1.push({
+        label: points[0],
+        y: parseFloat(points[2])
+      });
+       dataPoints2.push({
+        label: points[0],
+        y: parseFloat(points[3])
+      });
+       dataPoints3.push({
+        label: points[0],
+        y: parseFloat(points[4])
+      });
+    }
+  }
+}
+
+function getDataPointsFromCSV1(csv) {
+  var points;
+  var csvLines = csv.split(/[\r?\n|\r|\n]+/);
+  for (var i = 0; i < csvLines.length; i++) {
+    if (csvLines[i].length > 0) {
+      points = csvLines[i].split(";");
+      dataPoints5.push({
+        label: points[0],
+        y: parseFloat(points[1])
+      });
+      dataPoints6.push({
+        label: points[0],
+        y: parseFloat(points[2])
+      });
+       dataPoints7.push({
+        label: points[0],
+        y: parseFloat(points[3])
+      });
+        dataPoints8.push({
+        label: points[0],
+        y: parseFloat(points[4])
+      });
+     
+    }
+  }
+}
+
+var dataPoints9 = [];
+var dataPoints10= [];
+var dataPoints11=[];
+var dataPoints12=[];
+
+
+
+$.get("hotel_plot3.csv", getDataPointsFromCSV2);
+
+function getDataPointsFromCSV2(csv) {
+  var points;
+  var csvLines = csv.split(/[\r?\n|\r|\n]+/);
+  for (var i = 0; i < csvLines.length; i++) {
+    if (csvLines[i].length > 0) {
+      points = csvLines[i].split(";");
+      dataPoints9.push({
+        label: points[0],
+        y: parseFloat(points[1])
+      });
+      dataPoints10.push({
+        label: points[0],
+        y: parseFloat(points[2])
+      });
+       dataPoints11.push({
+        label: points[0],
+        y: parseFloat(points[3])
+      });
+        dataPoints12.push({
+        label: points[0],
+        y: parseFloat(points[4])
+      });
+     
+    }
+  }
+}
+</script>
+
+
+
+
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<body> 
+  <h1 id="titre">CONNECTÉS ENSEMBLE</h1>
+    <br>
+    <a href="index.html"><img src="logo.png" class="image"/> </a>
+    <br>
+
+<!-- MENU DU HAUT -->
+
+<div id="menu">
+<ul>
+  <li><a href="formulaire.html">MON BILAN</a></li>
+  <li><a href="#">COMMUNAUTÉ</a>
+    <ul>
+      <li><a href="catalogue.html">CATALOGUE</a></li>
+      <li><a href="forum.html">FORUM</a></li>
+    </ul>
+  </li>
+  <li><a href="#">ACCOMPAGNEMENT</a>
+    <ul>
+      <li><a href="#">SOLUTIONS WEB</a></li>
+      <li><a href="actupro.html">L'ACTU PRO</a></li>
+      <li><a href="webinaires.html">WEBINAIRES</a></li>
+    </ul>
+</li>
+  <li><a href="#">A PROPOS</a>
+</ul>
+<br>
+</div>
+<div id="monbilan">
+  <h1> Mon bilan personnalisé</h1>
+</div>
+<div id="monid"><p>MON ID : 3657898 <br> MON SECTEUR D'ACTIVITÉ : Cafés, Hôtels, Restaurants<p></div>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div> 
+<img style="width: 700px; height: 150px; margin-left: 0px;" src="legende1.png">
+<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+<img style="width: 700px; height: 150px; margin-left: 0px;" src="legende2.png">
+<div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+<img style="width: 700px; height: 150px; margin-left: 0px;" src="legende3.png">
+<div id="resultats">
+  <h1 style="color: #009597; font-family: gotham medium;">A propos de mon flux créditeur moyen :</h1>
+  <p> Avant la crise du Covid-19, le montant mensuel moyen de votre flux créditeur était de : <font color="green">+ 75 481 €.</font> <br>
+    Après la crise du Covid-19, le montant mensuel moyen de votre flux créditeur était de : <font color="green">+ 71 419 €.</font><br>
+    Le montant mensuel moyen de votre flux créditeur à évoluer de <font color="red">-5,38 %.</font></p>
+    <h1 style= "color: #009597; font-family: gotham medium;">A propos de mon chiffre d'affaire : </h1>
+    <p> Avant la crise du Covid-19, le montant annuel moyen de votre chiffre d'affaire était de : <font color="green">+ 757 037 €.</font> <br>
+    Après la crise du Covid-19, le montant de votre chiffre d'affaire annuel est estimé à : <font color="green">+ 699 786 €.</font><br>
+    Le montant de votre chiffre d'affaire à évoluer de <font color="red">-8,18 %.</font><br> Votre entreprise est en <font color="orange">EQUILIBRE</font>. <br> En analysant différents aspect de votre entreprise comme le secteur,  le chiffre d'affaire,  la moyenne de votre flux créditeur ou l'effectif de votre entreprise, nous vous classé dans la classe :<font color="orange"> EQUILIBRE</font> </p>
+</div>
+<hr>
+<div>
+  <a style="background-color: #006A4E; font-size: 30px; text-align: center; color: white; margin-left: 500px;" href="tableau.html">Accéder aux chiffres clés</a>
+</div>
+</body>
+</html>

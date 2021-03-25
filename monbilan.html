@@ -2,15 +2,15 @@
 
 <html lang="fr">
   <head>
-      <title>Webinaires</title>
+      <title>Mon bilan</title>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
-  	<style type="text/css">
-    	body{
+    <style type="text/css">
+      body{
       background-color: #F5F5F5;
       }
     .image{
@@ -87,63 +87,119 @@
     #menu li ul {
     position:absolute;
     }
- 		#bandeau
- 		{
- 		margin-left: 550px;
- 		margin-right: 400px;
- 		}
- 
-     img{
-      margin-top: 60px;
+    img{
+      width: 250px;
+      height: 250px;
       margin-left: 20px;
-      width: 45%;
-     }
+    }
+#monbilan h1{ 
+      color:black;
+      font-family: arial bold;
+      text-align: center;
+      font-size: 60px;
+      margin-top: 40px;
 
-     #marquee{ 
-     height:200px; 
-     width:400px; 
-     font-family:Arial medium;
-     font-size:25px;
-     color:black;
-     border-width:2;
-     border-style:solid;
-     border-color:black; 
-     text-align: center;
-      }
+    }
+  #chartContainer{
+    background-color:#F5F5F5
+  }
+#id{
+  margin-top: 50px;
+}
+  </style>
+  <script type="text/javascript">
+window.onload = function() { 
+ 
+var dataPoints = [];
+var dataPoints1= [];
+var dataPoints2=[];
+var dataPoints3=[];
+console.log(dataPoints); 
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  exportEnabled: true,
+  title: {
+    text: "Flux créditeurs confiés"
+  },
+  axisY: {
+    title: "Montant en euros"
+  },
+  axisX:{
+    title:" Date"
+  },
+  data: [{
+    type: "line",
+    toolTipContent: "{y} euros",
+    markerType: "square",
 
-    #venir{ 
-    color: black;
-    font-family: Arial bold;
-    font-size: 30px;
-    text-decoration: underline;
-    text-align: center;
-    margin-left: 650px;
-    margin-top: -270px;
-     }
-     #revoir{
-      color: black;
-      font-family: arial medium;
-      font-size: 30px;
-      text-decoration: underline;
-      text-align: left;
-      margin-top: 30px;
-      margin-left: 10px;
-     }
+    dataPoints: dataPoints,
+  },
+  {
+    type: "line",
+    toolTipContent: "{y} euros",
+    dataPoints: dataPoints1,
+    color: "green",
+    lineDashType: "dash"
+  },
+  {
+    type: "line",
+    toolTipContent: "{y} euros",
+    dataPoints: dataPoints2,
+    color: "red",
+    lineDashType: "dash"
+  },
+  {
+    type: "line",
+    toolTipContent: "{y} euros",
+    dataPoints: dataPoints3,
+    color: "pink",
+    lineDashType: "dash"
+  }
+  ]
+});
+ 
+$.get("data_plot.csv", getDataPointsFromCSV);
+ 
+//CSV Format
+//Year,Volume
+function getDataPointsFromCSV(csv) {
+  var points;
+  var csvLines = csv.split(/[\r?\n|\r|\n]+/);
+  for (var i = 0; i < csvLines.length; i++) {
+    if (csvLines[i].length > 0) {
+      points = csvLines[i].split(";");
+      dataPoints.push({
+        label: points[0],
+        y: parseFloat(points[1])
+      });
+      dataPoints1.push({
+        label: points[0],
+        y: parseFloat(points[2])
+      });
+       dataPoints2.push({
+        label: points[0],
+        y: parseFloat(points[3])
+      });
+       dataPoints3.push({
+        label: points[0],
+        y: parseFloat(points[4])
+      });
+    }
+  }
+  chart.render();
+}
+ 
+}
+console.log(dataPoints1);
+console.log(dataPoints);
+</script>
 
-     #revoirvideo{
-      width: 30%;
-      margin-top: -40px;
-     }
-     #web{
-      width: 100%;
-      margin-left:0px;
-     }
-	</style>
 
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-
-<body>
-	<h1 id="titre">CONNECTÉS ENSEMBLE</h1>
+<body> 
+  <h1 id="titre">CONNECTÉS ENSEMBLE</h1>
     <br>
     <a href="index.html"><img src="logo.png" class="image"/> </a>
     <br>
@@ -170,28 +226,11 @@
 </ul>
 <br>
 </div>
-<div><img id="web" src="web.png"></div>
-<div id="video">
-  <img src="video.png">
+<div id="monbilan">
+  <h1> Mon bilan personnalisé</h1>
 </div>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div> 
+<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
 
-<div id="venir">
-	<p> A venir :</p>
-<marquee direction="up" behavior="scroll" scrollamount="3" id="marquee"> 
-XX : titre <br>
-XX : titre <br>
-XX : titre <br>
-XX : titre <br>
-XX : titre <br>
-XX : titre <br>
-</marquee>
- </div>
-
-<div id="revoir">
-<p> Revoir :</p>
-</div>
-<div id="revoirvideo">
-  <img src="icone.png">
-</div>
 </body>
 </html>
