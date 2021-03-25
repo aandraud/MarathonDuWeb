@@ -1,0 +1,163 @@
+---
+title: "estim_ca"
+output: html_document
+---
+
+```{r, include = FALSE}
+library(dplyr)
+library(tidyverse)
+```
+
+# Données
+
+```{r, include = TRUE}
+df_flux <- read.csv2("C:/Users/tipha/Downloads/FLX_CA_AGREG_20210317.csv")
+glimpse(df_flux)
+```
+
+# Secteur vente
+
+```{r, include = TRUE}
+flx_vente <- df_flux %>% filter(SECTEUR_ACTIVITE == "Vente Par Correspondance")
+```
+
+### Régression avec toutes les variables
+
+```{r, include=TRUE}
+var_reg <- dplyr::select(flx_vente, starts_with("MT_"))
+
+reg <- lm(MT_CA~., data=var_reg)
+summary(reg)
+```
+
+```{r, include = TRUE}
+library(leaps)
+regfit_full2 <-regsubsets(MT_CA~.,
+                    nvmax=4,method="backward",really.big=FALSE,data=var_reg)
+
+reg_sum_forward <- summary(regfit_full2)
+max_adjr2_forward <- which.max(reg_sum_forward$adjr2)
+min_cp_forward <- which.min(reg_sum_forward$cp)
+min_bic_forward <- which.min(reg_sum_forward$bic)
+
+print("Sélection des variables avec le meilleur R2 ajusté: ")
+names(which(reg_sum_forward$which[max_adjr2_forward,]==TRUE))
+"Sélection des variables avec le meilleur CP de Mallow: "
+names(which(reg_sum_forward$which[min_cp_forward,]==TRUE))
+"Sélection des variables avec le meilleur bic: "
+names(which(reg_sum_forward$which[min_bic_forward,]==TRUE))
+```
+# Nouvelle régression
+
+```{r, include = TRUE}
+best_model <- lm(MT_CA~MT_SLD_DAV_AVG+MT_FLX_DEB+MT_FLX_040+MT_FLX_432+MT_FLX_602, data=var_reg)
+summary(best_model)
+```
+
+```{r, include = TRUE}
+pred_id <- flx_vente %>% filter(IDENTR==3709623)
+prediction_vente <- predict.lm(reg,pred_id)
+```
+
+
+
+# Nb de variables 
+
+```{r, include = TRUE}
+par(mfrow =c(2,2))
+plot(reg_sum_forward$adjr2,xlab="Number of Variables ",ylab="Adjusted RSq",type="l")
+points(max_adjr2_forward,reg_sum_forward$adjr2[max_adjr2_forward],col ="red",cex =2, pch =20)
+plot(reg_sum_forward$cp,xlab="Number of Variables ",ylab="Cp",type="l")
+points(min_cp_forward,reg_sum_forward$cp[min_cp_forward],col ="red",cex =2, pch =20)
+plot(reg_sum_forward$bic,xlab="Number of Variables ",ylab="BIC",type="l")
+points(min_bic_forward,reg_sum_forward$bic[min_bic_forward],col ="red",cex =2, pch =20)
+```
+
+
+# Secteur loisir
+
+```{r, include = TRUE}
+flx_tourisme <- df_flux %>% filter(SECTEUR_ACTIVITE == "Loisirs") %>%
+  drop_na()
+```
+
+### Régression avec toutes les variables
+
+```{r, include=TRUE}
+var_reg <- dplyr::select(flx_tourisme, starts_with("MT_")) %>% drop_na()
+
+reg <- lm(MT_CA~., data=var_reg)
+summary(reg)
+```
+```{r, include= TRUE}
+b <- reg$fitted.values
+data_reg <- flx_tourisme %>% mutate(reg=b)
+plot(data_reg$MT_CA, data_reg$reg)
+```
+
+
+
+# Sélection des variables
+
+
+# Secteur hotellerie
+```{r, include = TRUE}
+flx_hotel <- df_flux %>% filter(SECTEUR_ACTIVITE == "Cafés, Hôtels, Restaurants") %>%
+  drop_na()
+```
+
+# Régression avec toutes les variables
+
+```{r, include=TRUE}
+var_reg <- dplyr::select(flx_hotel, starts_with("MT_")) %>% drop_na()
+
+reg <- lm(MT_CA~., data=var_reg)
+pred_id <- flx_hotel %>% filter(IDENTR==3657898,
+                                MT_SLD_DAV_ARRT_CMPTBL == 47214)
+
+prediction_hotel <- predict.lm(reg,pred_id)
+#summary(reg)
+
+```
+
+```{r, include= TRUE}
+b <- reg$fitted.values
+data_reg <- flx_hotel %>% mutate(reg=b)
+plot(data_reg$MT_CA, data_reg$reg)
+```
+
+
+# En enlevant les var corrélées
+
+```{r, include = TRUE}
+reg <- lm(CA_reel~flux1+flux2+flux3+flux4+flux5+flux6+flux7+flux8+flux9+flux10+flux11+flux12+
+            dav1+dav2+dav3+dav4+dav5+dav6+dav7+dav8+dav9+dav10+dav11+dav12 +
+            deb1+deb2+deb3+deb4+deb5+deb6+deb7+deb8+deb9+deb10+deb11+deb12, data=df_sante)
+car::vif(reg)
+
+
+summary(reg)
+```
+
+```{r, include = TRUE}
+reg <- lm(CA_reel~flux3+flux4+flux7+flux8+flux9+
+            dav1+dav4+dav6+dav12 +
+            deb1+deb3+deb5+deb8+deb11+deb12, data=df_sante)
+car::vif(reg)
+
+
+summary(reg)
+```
+
+# Autre méthodes 
+
+```{r, include = TRUE}
+df_global <- readRDS("C:/Users/tipha/OneDrive/Documents/Cours/Marathon du web/df_final.RDS")
+test <- df_global %>% mutate( 
+                        med11 = med_flux*11 ,
+                        erreur_med_relative = abs((med11-CA_reel)/abs(CA_reel))*100) %>%
+  drop_na()
+head(test)
+median(test$erreur_med_relative)
+```
+
