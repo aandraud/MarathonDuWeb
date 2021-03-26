@@ -8,7 +8,7 @@ Soraya Tatem
 Pascal Ruiz
 
 # Contexte du projet : 
-Le crédit agricole a été très impacté par la crise de la Covid-19 malgré les nombreuses aides proposées par le gouvernement. Les professionnels sont les plus touchés même si tous les domaines ne sont pas tous affectées de la même manière. L'année 2020 a cependeant été l'année record en création d'entreprise en augmentant de 4% par rapport à l'année précédente (livraison,t ransport etc...).
+Le crédit agricole a été très impacté par la crise de la Covid-19 malgré les nombreuses aides proposées par le gouvernement. Les professionnels sont les plus touchés même si tous les domaines ne sont pas tous affectés de la même manière. L'année 2020 a cependeant été l'année record en création d'entreprise en augmentant de 4% par rapport à l'année précédente (livraison,t ransport etc...).
 De nombreux profils sont présents dans la clientèle du Crédit Agricole avec plus d'un million de client. L'enjeu est d'avoir une très bonne connaissance de leurs clients. Cette connaissance passe par les données, notamment le chiffre d'affaire qui est directement lié au résultat net et à la santé de l'entreprise. 
 
 # Objectifs : 
