@@ -26,9 +26,8 @@ D'un point de vue visualisation, l'objectif est d'élaborer une plateforme web �
 - MRTHN_ETABLISSEMENTS_20210317 : fichier CSV qui rescence l'ensemble des entreprises présentes dans les données. Taille du fichier : 5532 ko. Variables : TYPE_CC, MARCHE_CC, NB_ETS_CC, CD_FORM_JUR, CD_RGM_FISC, CD_ANC_CREA_ENTR, CD_EFFECTIF, MARCHE_PART, CD_ANC_EER, DEPT, TP_PTF, TP_SOCIETR, TP_DBTR, TP_INCDNT_BQR, TP_JEUNE_AGRI, CD_NAF, TYPE_ACTIVITE, SECTEUR_ACTIVITE, CD_SEGMENT, NOTE_BALE2, YRMM_1ER_PGE, YRMM_DER_PGE, ANC_DER_ENTRTN, LIB_METIER, ID_EDS_AGP, ID_EDS_SECTEUR, ID_EDS_DIRCO, TYPE_RL, NATU_LIEN_RL, CD_AGE_RL, IDGRPRISQ ,IDENTR ,IDPART.
 - MRTHN_FLX_SLD_DAV_20210317 : fichier CSV qui contient tous les montants des flux (créditeurs, débiteurs...), montant du solde du compte courant, toutes les montants des transactions. Taille du fichier : 62152 ko. Variables : MOIS, NB_FLUX_CRED_CONF, MT_FLUX_CRED_CONF, NB_FLUX_CRED, MT_FLUX_CRED, NB_FLUX_DEB, MT_FLUX_DEB, MT_SLD_DAV, IDENTR, IDPART.
 
-# Questions : 
-
-
+# Lien vidéo Youtube : 
+https://www.youtube.com/watch?v=RIgcPBKb9Po
 
 # Lien Trello : 
 https://trello.com/b/BzjhWhf6/sprint-1
